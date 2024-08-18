@@ -11,7 +11,7 @@ window.onload = (event) => {
 
 
 function loadSettingFromStorage(){
-    if((localStorage.getItem('difficult')==null)==true){
+    if((localStorage.getItem('difficult')==null)==true || (localStorage.getItem('difficult')=='NaN')==true){
         diffCheck=1
 	damageDeal=0
 	healHp=0
