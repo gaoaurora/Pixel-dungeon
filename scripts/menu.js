@@ -13,6 +13,9 @@ window.onload = (event) => {
 function loadSettingFromStorage(){
     if((localStorage.getItem('difficult')==null)==true){
         diffCheck=1
+	damageDeal=0
+	healHp=0
+	playerDeathTimes=0
 	saveOptions()
     }
 
