@@ -11,10 +11,11 @@ window.onload = (event) => {
 
 
 function loadSettingFromStorage(){
-    if(localStorage.getItem('difficult')==null){
+    if((localStorage.getItem('difficult')==null)==true){
         diffCheck=1
 	saveOptions()
     }
+
     // Get the value from storage and convert it to a boolean
     sfxCheck = (localStorage.getItem('sfxCheck') === 'true');
 
