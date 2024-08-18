@@ -1,5 +1,6 @@
 
 window.onload = (event) => {
+	
     loadSettingFromStorage()
     updateOptionsGraphic()
     startBGM(null)
@@ -11,7 +12,8 @@ window.onload = (event) => {
 
 function loadSettingFromStorage(){
     if(localStorage.getItem('difficult')==null){
-        saveOptions()
+        diffCheck=1
+	saveOptions()
     }
     // Get the value from storage and convert it to a boolean
     sfxCheck = (localStorage.getItem('sfxCheck') === 'true');
