@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--<link rel="icon" href="favicon.png" type="image/x-icon">-->
+    
+    <script type="text/javascript" src="scripts/script.js"></script>
+    <script type="text/javascript" src="scripts/menu.js"></script>
+    <script type="text/javascript" src="scripts/flipCard.js"></script>
+    <script type="text/javascript" src="scripts/progressData.js"></script>
+    <script type="text/javascript" src="scripts/achievements.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/options.css">
+    <link rel="stylesheet" type="text/css" href="styles/game.css">
+
+    <title>Pixel Dungeons</title>
+</head>
+<body class="body">
+    <div id="main">
+    <h1 style="color: rgb(172, 172, 172);font-family: Pixel;font-size:40px;text-shadow: 4px 4px 2px rgba(0,0,0,0.6);">Pixel Dungeons</h1>
+    <hr>
+
+    <div id="menu" >
+        <button class="btn" id="playButton" onclick="gameScreen();">Play</button>
+        <button class="btn" id="optionsButton" onclick="optionsScreen()">Options</button>
+    </div>
+
+    <div id="options" style="display: none;"> 
+        <span style="color: white;"><big>Difficulty:</big> </span>
+            <button class="btn" id="diffToggle" onclick="diffToggle()">Easy</button> 
+
+        <span style="color: white;"><big>SFX:</big></span> 
+            <button class="btn" style="color:rgb(67, 226, 67)" id="sfxToggle" onclick="sfxToggle()">On</button>
+
+        <span style="color: white;"><big>BGM:</big></span> 
+            <button class="btn" style="color:rgb(67, 226, 67)" id="bgmToggle" onclick="bgmToggle()">On</button>
+
+        <span style="color: white;"><big>Mobile-friendly mode</big></span>
+            <button class="btn" style="color:rgb(67, 226, 67)" id="mobileToggle" onclick="mobileToggle()">Off</button>
+
+            
+        <button class="btn" id="backToMenuScreen" onclick="menuScreen()"><span style="color: black;text-align: center;"><big>Back to menu screen</big> </button>
+    </div>
+
+    <div id="gameScreen" style="display:none;" ><!--debug -->
+        <div class="gameBoard" style="display:flex" >
+            <table  id="playField">
+                <tr style="background-color: white;"></tr>
+                    <td>
+                        <img id="card00" onclick="controlGame(0,0)" style="width: 100%; height: 100%; display: inline-block;" src="background/cross30px.png">
+                        <p id="index00" style="position: absolute; top: 0; right: 0; margin: 0; padding: 5px;">A</p>
+                    </td>
+                    <td>
+                        <img id="card01" onclick="controlGame(0,1)" style="width: 100%; height: 100%; /*object-fit: cover;*/" src="background/cross30px.png">
+                        <p id="index01" style="position: absolute; top: 0; right: 0; margin: 0; padding: 5px;">N</p>
+                    </td>
+                    <td>
+                        <img id="card02" onclick="controlGame(0,2)" style="width: 100%; height: 100%; /*object-fit: cover;*/" src="background/cross30px.png">
+                        <p id="index02" style="position: absolute; top: 0; right: 0; margin: 0; padding: 5px;">B</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img id="card10" onclick="controlGame(1,0)" style="width: 100%; height: 100%; /*object-fit: cover;*/" src="background/cross30px.png">
+                        <p id="index10" style="position: absolute; top: 0; right: 0; margin: 0; padding: 5px;">A</p>
+                    </td>
+                    <td><img id="card11" onclick="controlGame(1,1)" style="width: 100%; height: 100%; /*object-fit: cover;*/" src="background/cross30px.png">
+                        <p id="index11" style="position: absolute; top: 0; right: 0; margin: 0; padding: 5px;">T</p>
+                    </td>
+                    <td><img id="card12" onclick="controlGame(1,2)" style="width: 100%; height: 100%; /*object-fit: cover;*/" src="background/cross30px.png">
+                        <p id="index12" style="position: absolute; top: 0; right: 0; margin: 0; padding: 5px;">O</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img id="card20" onclick="controlGame(2,0)" style="width: 100%; height: 100%; /*object-fit: cover;*/;" src="background/cross30px.png">
+                        <p id="index20" style="position: absolute; top: 0; right: 0; margin: 0; padding: 5px;">K</p>
+                    </td>
+                    <td><img id="card21" onclick="controlGame(2,1)" style="width: 100%; height: 100%; /*object-fit: cover;*/" src="background/cross30px.png">
+                        <p id="index21" style="position: absolute; top: 0; right: 0; margin: 0; padding: 5px;">A</p>
+                    </td>
+                    <td><img id="card22" onclick="controlGame(2,2)" style="width: 100%; height: 100%; /*object-fit: cover;*/" src="background/cross30px.png">
+                        <p id="index22" style="position: absolute; top: 0; right: 0; margin: 0; padding: 5px;">M</p>
+                    </td>
+                </tr>
+            </table>
+            
+            <div>
+                <table id="achievements"></table>
+            </div>
+            </div>
+            <div id="cell"></div>
+            <div id="hpBar"   style="background-image: url(assets/timer_bar_fill.png);"></div>
+            <button class="btn" id="resetButton" onclick="isGameStart=false;coordinatesXPlayer=1;coordinatesYPlayer=1;gameScreen();">Reset</button>
+            <button class="btn" id="menuButton" onclick="menuScreen();">Menu</button>            
+    </div>
+
+    <div id="credit" class="credit" > <!--debug-->
+        Developer: <br>
+         gaoaurora:<a href="http://facebook.com/nguyenthekhai7749" target="_blank" style="color: chartreuse;">Facebook</a> <a style="color: chartreuse;" href="http://discord.com/users/983387837800005652" target="_blank">Discord</a>
+         Itzblack:<a href="https://itzblack.carrd.co/" style="color: chartreuse;" target="_blank" >Carrd</a><br>
+         BGM:<a href="https://www.youtube.com/watch?v=487Xz9y_f6w" target="_blank" style="color: chartreuse;">here</a> <br>
+         All right reversed @2024
+        </p>
+        </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+:root{
+    --diff:#001580;
+    --sfx:#1e6e33;
+    --bgm:#1e6e33;
+    --mobile:#1e6e33
+}
+
+#options{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+#options> .btn{
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+    1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff; /*Text Border*/
+
+    font-size: 125%;
+    color:rgb(226, 67, 67);
+    width: 20%;
+    height:5vw;
+    text-align: center;
+    margin-bottom:25px ;
+    background: linear-gradient(90deg, #ff0303, #2109fd, #0cd136);
+    animation: btnIdle 1s infinite;
+    background-size: 400% 400%;
+    cursor:pointer;
+
+    position: relative;
+    display:inline-block;
+
+    border-color: rgb(146, 146, 146);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+}
+/*            document.getElementById("diffToggle").style.color="rgb(251, 255, 0)"*/
+
+#options> .btn:hover{
+    animation-name: btnHover;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+button#diffToggle.btn{
+    background: linear-gradient(45deg, rgb(160, 160, 160), var(--diff));
+
+    animation: btnIdle 1s infinite;
+    background-size: 400% 400%;
+    cursor:pointer;
+
+    color: rgb(0, 123, 255);
+
+    position: relative;
+    display:inline-block;
+
+    border-color: rgb(146, 146, 146);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+
+}
+
+button#diffToggle.btn:hover{
+    animation-name: btnHover;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+button#sfxToggle.btn{
+    background: linear-gradient(45deg, rgb(160, 160, 160), var(--sfx));
+
+    animation: btnIdle 1s infinite;
+    background-size: 400% 400%;
+    cursor:pointer;
+
+    color: rgb(0, 123, 255);
+
+    position: relative;
+    display:inline-block;
+
+    border-color: rgb(146, 146, 146);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+
+}
+
+button#sfxToggle.btn:hover{
+    animation-name: btnHover;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+button#bgmToggle.btn{
+    background: linear-gradient(45deg, rgb(160, 160, 160), var(--bgm));
+
+    animation: btnIdle 1s infinite;
+    background-size: 400% 400%;
+    cursor:pointer;
+
+    color: rgb(0, 123, 255);
+
+    position: relative;
+    display:inline-block;
+
+    border-color: rgb(146, 146, 146);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+
+}
+
+button#bgmToggle.btn:hover{
+    animation-name: btnHover;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+button#mobileToggle.btn{
+    background: linear-gradient(45deg, rgb(160, 160, 160), var(--mobile));
+
+    animation: btnIdle 1s infinite;
+    background-size: 400% 400%;
+    cursor:pointer;
+
+    color: rgb(0, 123, 255);
+
+    position: relative;
+    display:inline-block;
+
+    border-color: rgb(146, 146, 146);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+
+}
+
+button#mobileToggle.btn:hover{
+    animation-name: btnHover;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
